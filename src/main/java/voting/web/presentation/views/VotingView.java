@@ -1,8 +1,7 @@
 package voting.web.presentation.views;
 
 import java.util.List;
-
-import voting.init.Model;
+import voting.web.presentation.models.Model;
 
 public class VotingView implements View {
 
@@ -17,5 +16,7 @@ public class VotingView implements View {
         sb.append(" ] \n");
         sb.toString();
     }
+
+    
 
 }
