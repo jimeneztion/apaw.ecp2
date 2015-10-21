@@ -2,59 +2,31 @@ package voting.rest.business.models.entities;
 
 public class Vote {
 
-    private Theme tema;
-
     private int id;
 
-    private int voto;
+    private int vote;
 
-    public Vote(Theme tema, int id, int voto) {
-        super();
-        this.tema = tema;
+    private Theme theme;
+
+    public Vote() {
+    }
+
+    public Vote(int id, int vote, Theme theme) {
         this.id = id;
-        this.voto = voto;
+        this.vote = vote;
+        this.theme = theme;
     }
 
-    /**
-     * @return the tema
-     */
-    public Theme getTema() {
-        return tema;
-    }
-
-    /**
-     * @param tema the tema to set
-     */
-    public void setTema(Theme tema) {
-        this.tema = tema;
-    }
-
-    /**
-     * @return the id
-     */
     public int getId() {
         return id;
     }
 
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
+    public int getVote() {
+        return vote;
     }
 
-    /**
-     * @return the voto
-     */
-    public int getVoto() {
-        return voto;
-    }
-
-    /**
-     * @param voto the voto to set
-     */
-    public void setVoto(int voto) {
-        this.voto = voto;
+    public Theme getTheme() {
+        return theme;
     }
 
 }
