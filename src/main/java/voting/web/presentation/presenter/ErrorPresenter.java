@@ -1,6 +1,6 @@
 package voting.web.presentation.presenter;
 
-import voting.init.Model;
+import voting.web.presentation.models.Model;
 
 public class ErrorPresenter {
 

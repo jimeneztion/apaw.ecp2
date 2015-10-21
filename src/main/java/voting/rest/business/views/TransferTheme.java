@@ -1,5 +1,5 @@
 package voting.rest.business.views;
 
-public class TransferObject1 {
+public class TransferTheme {
 
 }

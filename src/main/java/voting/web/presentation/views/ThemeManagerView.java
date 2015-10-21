@@ -1,6 +1,6 @@
 package voting.web.presentation.views;
 
-import voting.init.Model;
+import voting.web.presentation.models.Model;
 
 public class ThemeManagerView implements View {
 

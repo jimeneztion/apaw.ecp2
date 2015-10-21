@@ -2,8 +2,8 @@ package voting.rest.business.controllers;
 
 import java.util.List;
 
-import voting.rest.business.views.TransferObject1;
-import voting.rest.business.views.TransferObject2;
+import voting.rest.business.views.TransferTheme;
+import voting.rest.business.views.TransferVote;
 import voting.rest.data.models.daos.DaoFactory;
 import voting.web.presentation.presenter.ThemeAverageTransfer;
 
@@ -16,8 +16,8 @@ public class BusinessController {
     }
 
     
-    public TransferObject1 m1() {
+    public TransferTheme m1() {
         DaoFactory.getFactory().getEntity1Dao().findAll();
-        return new TransferObject1();
+        return new TransferTheme();
     }
 }
