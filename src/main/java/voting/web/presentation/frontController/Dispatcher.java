@@ -3,7 +3,10 @@ package voting.web.presentation.frontController;
 import voting.init.Model;
 import voting.web.presentation.presenter.ThemeManagerPresenter;
 import voting.web.presentation.presenter.VotingPresenter;
+import voting.web.presentation.views.ErrorView;
+import voting.web.presentation.views.ThemeManagerView;
 import voting.web.presentation.views.View;
+import voting.web.presentation.views.VotingView;
 import web.http.HttpRequest;
 import web.http.HttpResponse;
 
@@ -43,9 +46,17 @@ public class Dispatcher {
     }
 
     private void show(String nextView, Model model) {
-        View view = null;
+        View view;
         switch (nextView) {
-        
+        case "VotingView":
+            view = new VotingView();
+            break;
+        case "ThemeManagerView":
+            view = new ThemeManagerView();
+            break;
+        default:
+            view = new ErrorView();
+            model.put("error", "Vista no encontrada: " + nextView);
         }
         view.show(model);
     }
