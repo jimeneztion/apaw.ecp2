@@ -1,5 +1,7 @@
 package voting.web.presentation.presenter;
 
+import voting.init.Model;
+
 public class VotingPresenter {
 
     private String param1;

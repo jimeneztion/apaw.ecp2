@@ -1,7 +1,8 @@
-package voting.rest.data.models.daos;
+package voting.rest.data.models.daos.memory;
 
-import voting.rest.memory.ThemeMemoryDao;
-import voting.rest.memory.VoteMemoryDao;
+import voting.rest.data.models.daos.DaoFactory;
+import voting.rest.data.models.daos.ThemeDao;
+import voting.rest.data.models.daos.VoteDao;
 
 public class DaoFactoryMemory extends DaoFactory {
 
@@ -12,10 +13,12 @@ public class DaoFactoryMemory extends DaoFactory {
     public DaoFactoryMemory() {
     }
 
+    
+
     @Override
     public ThemeDao getThemeDao() {
         if (themeDao == null) {
-            themeDao = new ThemeMemoryDao();
+            themeDao = new ThemeDao();
         }
         return themeDao;
     }
@@ -23,11 +26,9 @@ public class DaoFactoryMemory extends DaoFactory {
     @Override
     public VoteDao getVoteDao() {
         if (voteDao == null) {
-            voteDao = new VoteMemoryDao();
+            voteDao = new VoteDao();
         }
         return voteDao;
     }
-
-
 
 }

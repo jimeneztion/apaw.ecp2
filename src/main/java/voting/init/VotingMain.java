@@ -1,7 +1,7 @@
 package voting.init;
 
 import voting.rest.data.models.daos.DaoFactory;
-import voting.rest.data.models.daos.DaoFactoryMemory;
+import voting.rest.data.models.daos.memory.DaoFactoryMemory;
 import web.http.HttpMethod;
 import web.http.HttpRequest;
 

@@ -1,4 +1,4 @@
-package voting.rest.memory;
+package voting.rest.data.models.daos.memory;
 public class ThemeMemoryDao extends GenericMemoryDao<Theme, Integer> implements ThemeDao {
 
     public ThemeMemoryDao() {

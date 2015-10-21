@@ -1,6 +1,8 @@
 package voting.web.presentation.frontController;
 
 import voting.init.Model;
+import voting.web.presentation.presenter.ThemeManagerPresenter;
+import voting.web.presentation.presenter.VotingPresenter;
 import voting.web.presentation.views.View;
 import web.http.HttpRequest;
 import web.http.HttpResponse;
@@ -13,6 +15,16 @@ public class Dispatcher {
         String nextView = request.getPath() + "View";
 
         switch (presenter) {
+        case "VotingPresenter":
+            VotingPresenter votingPresenter = new VotingPresenter();
+            //Injectar parámetros mediante helper1Presenter.setters()
+            nextView = votingPresenter.process(model);
+            break;
+        case "ThemeManagerPresenter":
+            ThemeManagerPresenter themeManagerPresenter = new ThemeManagerPresenter();
+            //Injectar parámetros mediante helper2Presenter.setters()
+            nextView = themeManagerPresenter.process(model);
+            break;
        
         }
         this.show(nextView, model);
