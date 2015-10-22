@@ -18,28 +18,54 @@ public class Dispatcher {
         String nextView = request.getPath() + "View";
 
         switch (presenter) {
-        case "VotingPresenter":
-            VotingPresenter votingPresenter = new VotingPresenter();
-            model.put("Votos", votingPresenter.process());
-            break;
-        case "ThemeManagerPresenter":
-            ThemeManagerPresenter themeManagerPresenter = new ThemeManagerPresenter();
-            // Injectar parámetros mediante helper2Presenter.setters()
-            model.put("Themas", votingPresenter.process());
-            break;
-
+            case "VotingPresenter":
+                VotingPresenter votingPresenter = new VotingPresenter();
+                model.put("votes", votingPresenter.process());
+                break;
+            case "ThemeManagerPresenter":
+                ThemeManagerPresenter themeManagerPresenter = new ThemeManagerPresenter();
+                model.put("themes", themeManagerPresenter.process());
+                break;
         }
         this.show(nextView, model);
     }
 
     public void doPost(HttpRequest request, HttpResponse response) {
-        Model model = new Model();
-        String presenter = request.getPath() + "Presenter";
+
+        String controller = request.getPath() + "Presenter";
         String action = request.getParams().get("action");
+        String themeName = request.getParams().get("themeName");
         String nextView = request.getPath() + "View";
+        Model model = new Model();
 
-        switch (presenter) {
+        switch (controller) {
+        case "VotingPresenter":
+            String vote = request.getParams().get("value");
+            int voteValue = Integer.parseInt(vote);
 
+            if ("voteTheme".equalsIgnoreCase(action)) {
+                VotingPresenter votingPresenter = new VotingPresenter();
+                model.put("themeName", themeName);
+                model.put("vote", voteValue);
+                votingPresenter.voteTheme(model);
+                model.put("votes", votingPresenter.process());
+            } else
+                model.put("error", "Acción no permitida: " + action);
+
+            break;
+
+        case "ThemeManagerPresenter":
+            model.put("themeName", themeName);
+
+            if ("createTheme".equalsIgnoreCase(action)) {
+                ThemeManagerPresenter themeManagerPresenter = new ThemeManagerPresenter();
+                themeManagerPresenter.createTheme(model);
+                model.put("themes", themeManagerPresenter.process());
+
+            } else
+                model.put("error", "Acción no permitida: " + action);
+
+            break;
         }
         this.show(nextView, model);
     }

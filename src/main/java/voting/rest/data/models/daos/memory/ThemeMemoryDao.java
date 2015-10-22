@@ -2,8 +2,10 @@ package voting.rest.data.models.daos.memory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import voting.rest.business.models.entities.Theme;
+import voting.rest.data.models.daos.ThemeDao;
 
 public class ThemeMemoryDao extends GenericMemoryDao<Theme, Integer> implements ThemeDao {
 

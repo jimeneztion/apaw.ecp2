@@ -6,7 +6,10 @@ public class ErrorView implements View {
 
     @Override
     public void show(Model model) {
-        System.out.println("Error \n   Lo siento, petición incorrecta. " + model.get("error"));
+        StringBuilder sb = new StringBuilder();
+        sb.append("ErrorView \n  error: "+ model.get("error"));
+        System.out.print(sb.toString());
+        
     }
 
 }

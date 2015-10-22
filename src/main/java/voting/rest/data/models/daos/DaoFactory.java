@@ -1,7 +1,7 @@
 package voting.rest.data.models.daos;
 
 public abstract class DaoFactory {
-    
+
     public static DaoFactory factory = null;
 
     public static void setFactory(DaoFactory factory) {

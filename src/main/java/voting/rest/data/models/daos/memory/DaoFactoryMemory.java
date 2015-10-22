@@ -15,7 +15,7 @@ public class DaoFactoryMemory extends DaoFactory {
     @Override
     public ThemeDao getThemeDao() {
         if (themeDao == null) 
-            themeDao = new ThemeDao();
+            themeDao = new ThemeMemoryDao();
         
         return themeDao;
     }
@@ -23,7 +23,7 @@ public class DaoFactoryMemory extends DaoFactory {
     @Override
     public VoteDao getVoteDao() {
         if (voteDao == null) 
-            voteDao = new VoteDao();
+            voteDao = new VoteMemoryDao();
         
         return voteDao;
     }
