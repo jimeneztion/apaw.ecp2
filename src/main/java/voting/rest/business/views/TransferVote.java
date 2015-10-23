@@ -3,7 +3,6 @@ package voting.rest.business.views;
 public class TransferVote {
     
     private String themeName;
-
     private int vote;
 
     public TransferVote(String themeName, int vote) {

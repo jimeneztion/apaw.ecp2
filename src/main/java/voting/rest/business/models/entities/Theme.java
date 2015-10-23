@@ -6,7 +6,6 @@ public class Theme {
 
     private String name;
 
-    
     public Theme(int id, String name) {
         super();
         this.id = id;
@@ -16,17 +15,9 @@ public class Theme {
     public int getId() {
         return id;
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
+    
     public String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+   
 }

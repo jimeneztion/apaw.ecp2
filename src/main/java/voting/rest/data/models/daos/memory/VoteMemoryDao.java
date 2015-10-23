@@ -14,18 +14,18 @@ public class VoteMemoryDao extends GenericMemoryDao<Vote, Integer> implements Vo
         this.setMap(new HashMap<Integer, Vote>());
     }
 
-    protected Integer getId(Vote entity) {
+    public Integer getId(Vote entity) {
         return entity.getId();
     }
 
     public List<Vote> findByTheme(Theme theme) {
         List<Vote> votes = new ArrayList<>();
         List<Vote> votesAll = this.findAll();
-        for (Vote vote : votesAll) {
-            if (theme.equals(vote.getTheme())) {
+
+        for (Vote vote : votesAll)
+            if (theme.equals(vote.getTheme()))
                 votes.add(vote);
-            }
-        }
+
         return votes;
     }
 

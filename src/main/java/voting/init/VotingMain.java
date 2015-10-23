@@ -7,9 +7,6 @@ import web.http.HttpRequest;
 
 public class VotingMain {
 
-    public VotingMain() {
-    }
-
     public void voting(){
         HttpRequest request = new HttpRequest("LocalHost", "Voting", HttpMethod.GET);
         System.out.println(request.toString() + "\n");

@@ -6,7 +6,6 @@ import voting.web.presentation.models.Model;
 
 public class ThemeManagerView implements View {
 
-    @Override
     public void show(Model model) {
         StringBuilder sb = new StringBuilder();
         sb.append("Theme Manager Page\n");
@@ -14,7 +13,7 @@ public class ThemeManagerView implements View {
         List<?> listThemes = (List<?>) model.get("themes");
         for (int i = 0; i < listThemes.size(); i++) {
             sb.append(listThemes.get(i));
-            
+
             if (listThemes.size() > i + 1)
                 sb.append(", ");
         }

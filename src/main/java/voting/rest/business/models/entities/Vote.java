@@ -8,9 +8,6 @@ public class Vote {
 
     private Theme theme;
 
-    public Vote() {
-    }
-
     public Vote(int id, int vote, Theme theme) {
         this.id = id;
         this.vote = vote;

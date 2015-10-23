@@ -18,14 +18,14 @@ public class Dispatcher {
         String nextView = request.getPath() + "View";
 
         switch (presenter) {
-            case "VotingPresenter":
-                VotingPresenter votingPresenter = new VotingPresenter();
-                model.put("votes", votingPresenter.process());
-                break;
-            case "ThemeManagerPresenter":
-                ThemeManagerPresenter themeManagerPresenter = new ThemeManagerPresenter();
-                model.put("themes", themeManagerPresenter.process());
-                break;
+        case "VotingPresenter":
+            VotingPresenter votingPresenter = new VotingPresenter();
+            model.put("votes", votingPresenter.process());
+            break;
+        case "ThemeManagerPresenter":
+            ThemeManagerPresenter themeManagerPresenter = new ThemeManagerPresenter();
+            model.put("themes", themeManagerPresenter.process());
+            break;
         }
         this.show(nextView, model);
     }
